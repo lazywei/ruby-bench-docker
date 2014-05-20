@@ -6,4 +6,4 @@ if [[ -z $IMAGE ]]; then
   docker build -t rb_bench/base - < ./dockerfiles/Base
 fi
 
-echo $IMAGE
+docker build -t rb_bench/ruby:2.2.0-dev - < ./dockerfiles/Ruby

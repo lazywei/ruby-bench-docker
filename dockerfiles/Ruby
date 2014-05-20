@@ -1,0 +1,4 @@
+FROM rb_bench/base:latest
+MAINTAINER Bert Chang <jrweizhang@gmail.com>
+
+RUN ~/.rbenv/bin/rbenv install 2.2.0-dev
