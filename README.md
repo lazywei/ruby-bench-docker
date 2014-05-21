@@ -1,5 +1,6 @@
 Docker image for Ruby-bench
 ========
+[![Build Status](https://travis-ci.org/lazywei/ruby-bench-docker.svg?branch=master)](https://travis-ci.org/lazywei/ruby-bench-docker)
 
 ## Requirements
 
