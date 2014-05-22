@@ -1,6 +1,6 @@
 FROM rb_bench/base:latest
 MAINTAINER Bert Chang <jrweizhang@gmail.com>
 
-RUN echo 'install_package "yaml-0.1.6" "http://pyyaml.org/download/libyaml/yaml-0.1.6.tar.gz#5fe00cda18ca5daeb43762b80c38e06e" --if needs_yaml \ninstall_package "ruby-5b629a7b8a344be1683a137f48d062634046f661" "https://github.com/ruby/ruby/archive/5b629a7b8a344be1683a137f48d062634046f661.tar.gz" ldflags_dirs autoconf standard verify_openssl' > ruby-5b629a7b8a344be1683a137f48d062634046f661
+RUN echo 'install_package "yaml-0.1.6" "http://pyyaml.org/download/libyaml/yaml-0.1.6.tar.gz#5fe00cda18ca5daeb43762b80c38e06e" --if needs_yaml \ninstall_package "ruby-${sha}" "https://github.com/ruby/ruby/archive/${sha}.tar.gz" ldflags_dirs autoconf standard verify_openssl' > ruby-${sha}
 
-RUN .rbenv/bin/rbenv install ./ruby-5b629a7b8a344be1683a137f48d062634046f661
+RUN .rbenv/bin/rbenv install ./ruby-${sha}
