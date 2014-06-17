@@ -1,0 +1,18 @@
+FROM rb_bench/ruby:${shortsha}
+MAINTAINER Bert Chang <jrweizhang@gmail.com>
+
+RUN git clone https://github.com/lazywei/discourse.git
+
+RUN apt-get -y install tasksel
+RUN apt-get -y install openssh-server^ postgresql-server^
+RUN apt-get -y install libyaml-dev libtool libxslt-dev libxml2-dev libpq-dev gawk curl pngcrush imagemagick software-properties-common
+
+RUN apt-add-repository -y ppa:rwky/redis
+RUN apt-get update
+RUN apt-get -y install redis-server
+
+RUN cp /discourse/config/discourse_quickstart.conf /discourse/config/discourse.conf
+RUN cp /discourse/config/discourse.pill.sample /discourse/config/discourse.pill
+
+RUN bash -c "source .bashrc; gem install bundler"
+RUN bash -c "source .bashrc; bundle install"
