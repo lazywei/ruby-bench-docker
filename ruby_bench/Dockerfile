@@ -1,4 +1,4 @@
-FROM lazywei/rb_bench_ruby:latest
+FROM lazywei/rb_bench_base_ruby:latest
 
 MAINTAINER Bert Chang "https://github.com/lazywei"
 
