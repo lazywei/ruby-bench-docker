@@ -1,13 +1,10 @@
-FROM rb_bench/base:latest
+FROM lazywei/rb_bench_ruby:latest
 
 MAINTAINER Bert Chang "https://github.com/lazywei"
 
-RUN mkdir -p /src
-
-RUN mkdir -p /src &&\
-        cd /src &&\
-        git clone https://github.com/ruby/ruby.git
-
 WORKDIR /src/ruby
 
-RUN ruby -v
+# Pull the latest ruby from github
+RUN git pull origin trunk
+
+ENTRYPOINT source /.bashrc && cd benchmark && ruby run.rb
