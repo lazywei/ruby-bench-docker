@@ -1,5 +1,5 @@
 FROM rb_bench/ruby:${shortsha}
-MAINTAINER Bert Chang <jrweizhang@gmail.com>
+MAINTAINER Bert Chang "https://github.com/lazywei"
 
 RUN git clone https://github.com/lazywei/discourse.git
 
