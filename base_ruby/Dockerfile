@@ -1,14 +1,8 @@
 FROM lazywei/rb_bench_base:latest
 MAINTAINER Bert Chang "https://github.com/lazywei"
 
-# We use bash
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
-RUN echo -e 'install_package "yaml-0.1.6" "http://pyyaml.org/download/libyaml/yaml-0.1.6.tar.gz#5fe00cda18ca5daeb43762b80c38e06e" --if needs_yaml \ninstall_package "ruby-${sha}" "https://github.com/ruby/ruby/archive/${sha}.tar.gz" ldflags_dirs autoconf standard verify_openssl' > ruby-${sha}
-
-RUN source /.bashrc &&\
-            rbenv install /ruby-${sha} &&\
-            rbenv global ruby-${sha}
+ADD run_rbenv_install.sh run_rbenv_install.sh
+RUN sh /run_rbenv_install.sh
 
 RUN mkdir -p /src &&\
         cd /src &&\
