@@ -6,13 +6,23 @@ Docker image for Ruby-bench
 
 - docker
 
-## Run
+## Run ruby benchmarks with latest ruby.
 
-- `sh build.sh`
+- `./runner_ruby_bench.sh`
+
+### Or you can run it by yourself
+
+- `docker run -it --rm lazywei/rb_bench_ruby_bench`
+
+## Build docker images
+
+If you don't want to use the images provided on docker index, you can build it from scratch:
+
+- `./build.sh`
+
 
 ## What this script does
 
 - Pull ubuntu 13.10 image from docker index
-- Install build tools, git and executable ruby
-- Clone latest ruby (branch: trunk) to `/ruby`
-- Configure and make
+- Install build tools, git and executable ruby by rbenv
+- Run ruby benchmarks for 5 times and give measured time
