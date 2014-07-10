@@ -6,23 +6,38 @@ Docker image for Ruby-bench
 
 - docker
 
-## Run ruby benchmarks with latest ruby.
+## Run benchmarks with latest ruby
 
-- `./ruby_bench/runner.sh`
+For [ruby benchmarks](https://github.com/ruby/ruby/tree/trunk/benchmark)
+
+`./ruby_bench/runner.sh`
+
+For [discourse](https://github.com/discourse/discourse)
+
+`./discourse_bench/runner.sh`
 
 ### Or you can run it by yourself
 
-- `docker run -it --rm lazywei/rb_bench_ruby_bench`
+All of the benchmarks are be executed in docker images, and thus you can run it manually.
+
+Ruby:
+
+`docker run -it --rm lazywei/rb_bench_ruby_bench`
+
+Discourse:
+
+`docker run -it --rm samsaffron/discourse_test`
 
 ## Build docker images
 
 If you don't want to use the images provided on docker index, you can build it from scratch:
 
-- `./build.sh`
+`./build.sh`
 
 
-## What this script does
+## What these scripts does
 
 - Pull ubuntu 13.10 image from docker index
 - Install build tools, git and executable ruby by rbenv
 - Run ruby benchmarks for 5 times and give measured time
+- Run discourse test for 5 times and give measured time
