@@ -8,7 +8,7 @@ Docker image for Ruby-bench
 
 ## Run ruby benchmarks with latest ruby.
 
-- `./runner_ruby_bench.sh`
+- `./ruby_bench/runner.sh`
 
 ### Or you can run it by yourself
 
