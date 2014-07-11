@@ -26,7 +26,11 @@ Ruby:
 
 Discourse:
 
-`docker run -it --rm samsaffron/discourse_test`
+`docker run -it --rm lazywei/rb_bench_discourse_bench`
+
+With a specified commit hash:
+
+`docker run -it --rm -e RAILS_COMMIT_HASH=7c4bfe lazywei/rb_bench_discourse_bench`
 
 ## Build docker images
 
